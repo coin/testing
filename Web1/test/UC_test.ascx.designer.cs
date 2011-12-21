@@ -7,18 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Web1 {
+namespace Web1.test {
     
     
-    public partial class _Default {
+    public partial class WebUserControl1 {
         
         /// <summary>
-        /// uc_test1 control.
+        /// _gridview control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Web1.test.WebUserControl1 uc_test1;
+        protected global::DevExpress.Web.ASPxGridView.ASPxGridView _gridview;
     }
 }
