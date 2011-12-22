@@ -14,15 +14,10 @@ namespace Web1.test
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            DBUtil DB = new DBUtil();
-            _gridview.DataSource = DB.GetAlunos();
-            _gridview.DataBind();
-        }
-
-        protected void _gridview_RowDeleted(object sender, DevExpress.Web.Data.ASPxDataDeletedEventArgs e)
-        {
-            DBUtil DB = new DBUtil();
             
+            //DBUtil DB = new DBUtil();
+            //_gridview.DataSource = DB.GetAlunos();
+            //_gridview.DataBind();
         }
     }
 }
