@@ -41,11 +41,6 @@ namespace Web1.Classes
             return FillDataSet(_cmd, "Alunos");
         }
 
-        //public DataSet DelAluno()
-        //{
-            //MySqlCommand cmd = new MySqlCommand.
-        //}
-
         public void AddAluno(Aluno obj_aluno)
         {
             _con = new MySqlConnection(connectionString);

@@ -1,8 +1,8 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UC_test.ascx.cs" Inherits="Web1.test.WebUserControl1" %>
-<%@ Register Assembly="DevExpress.Web.ASPxGridView.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
-    Namespace="DevExpress.Web.ASPxGridView" TagPrefix="dx" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UC_GridView_DataSource.ascx.cs" Inherits="Web1.test.UC.WebUserControl1" %>
+<%@ Register assembly="DevExpress.Web.ASPxGridView.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxGridView" tagprefix="dx" %>
 <%@ Register assembly="DevExpress.Web.ASPxEditors.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxEditors" tagprefix="dx" %>
-<dx:ASPxGridView ID="_gridview" runat="server" AutoGenerateColumns="False" 
+
+<dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" 
     DataSourceID="SqlDataSource1" KeyFieldName="id">
     <Columns>
         <dx:GridViewCommandColumn VisibleIndex="0">
@@ -12,6 +12,8 @@
             </NewButton>
             <DeleteButton Visible="True">
             </DeleteButton>
+            <ClearFilterButton Visible="True">
+            </ClearFilterButton>
         </dx:GridViewCommandColumn>
         <dx:GridViewDataTextColumn FieldName="id" ReadOnly="True" VisibleIndex="1">
             <EditFormSettings Visible="False" />
@@ -29,6 +31,6 @@
     InsertCommand="INSERT INTO aluno(nome, idade) VALUES (@nome, @idade)" 
     ProviderName="<%$ ConnectionStrings:bd_testConnectionString.ProviderName %>" 
     SelectCommand="SELECT * FROM aluno" 
-    UpdateCommand="UPDATE aluno SET nome = @nome, idade = @idade WHERE id = @id">
+    UpdateCommand="UPDATE aluno SET nome = @nome, idade = @idade WHERE (id = @id)">
 </asp:SqlDataSource>
 

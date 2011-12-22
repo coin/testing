@@ -72,8 +72,8 @@
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
-    <Content Include="test\UC_test.ascx" />
-    <Content Include="test\GridView.aspx" />
+    <Content Include="test\templates\GridView.aspx" />
+    <Content Include="test\UC\UC_GridView_DataSource.ascx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -137,19 +137,19 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="test\UC_test.ascx.cs">
-      <DependentUpon>UC_test.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="test\UC_test.ascx.designer.cs">
-      <DependentUpon>UC_test.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="test\GridView.aspx.cs">
+    <Compile Include="test\templates\GridView.aspx.cs">
       <DependentUpon>GridView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="test\GridView.aspx.designer.cs">
+    <Compile Include="test\templates\GridView.aspx.designer.cs">
       <DependentUpon>GridView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="test\UC\UC_GridView_DataSource.ascx.cs">
+      <DependentUpon>UC_GridView_DataSource.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test\UC\UC_GridView_DataSource.ascx.designer.cs">
+      <DependentUpon>UC_GridView_DataSource.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -22,12 +22,12 @@ namespace Web1.test {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// UC_test1 control.
+        /// UC_GridView_DataSource1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Web1.test.WebUserControl1 UC_test1;
+        protected global::System.Web.UI.UserControl UC_GridView_DataSource1;
     }
 }
