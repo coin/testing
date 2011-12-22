@@ -18,5 +18,11 @@ namespace Web1.test
             _gridview.DataSource = DB.GetAlunos();
             _gridview.DataBind();
         }
+
+        protected void _gridview_RowDeleted(object sender, DevExpress.Web.Data.ASPxDataDeletedEventArgs e)
+        {
+            DBUtil DB = new DBUtil();
+            
+        }
     }
 }

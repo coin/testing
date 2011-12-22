@@ -17,6 +17,11 @@ namespace Web1.Classes
     public class DBUtil
     {
         private String connectionString;
+        MySqlConnection _con;
+        MySqlCommand _cmd;
+        //DataTable _dt;
+        //MySqlDataAdapter _sda;
+        //MySqlCommandBuilder scb;
 
         public DBUtil()
         {
@@ -32,49 +37,55 @@ namespace Web1.Classes
 
         public DataSet GetAlunos()
         {
-            string query = "SELECT * FROM aluno";
-            MySqlCommand cmd = new MySqlCommand(query);
-            return FillDataSet(cmd, "Alunos");
+            _cmd = new MySqlCommand("SELECT * FROM aluno");
+            return FillDataSet(_cmd, "Alunos");
         }
+
+        //public DataSet DelAluno()
+        //{
+            //MySqlCommand cmd = new MySqlCommand.
+        //}
 
         public void AddAluno(Aluno obj_aluno)
         {
-            MySqlConnection con = new MySqlConnection(connectionString);
+            _con = new MySqlConnection(connectionString);
+
             // Create the Command.
             string insertSQL = "INSERT INTO aluno ";
             insertSQL += "(nome, idade, sexo)";
             insertSQL += "VALUES (@nome,  @idade,  @sexo)";
-            MySqlCommand cmd = new MySqlCommand(insertSQL, con);
-            cmd.Parameters.AddWithValue("@nome", obj_aluno.nome);
-            cmd.Parameters.AddWithValue("@idade", obj_aluno.idade);
-            cmd.Parameters.AddWithValue("@sexo", obj_aluno.sexo);
+            _cmd = new MySqlCommand(insertSQL, _con);
+
+            _cmd.Parameters.AddWithValue("@nome", obj_aluno.nome);
+            _cmd.Parameters.AddWithValue("@idade", obj_aluno.idade);
+            _cmd.Parameters.AddWithValue("@sexo", obj_aluno.sexo);
+
             try
             {
-                con.Open();
-                cmd.ExecuteNonQuery();
+                _con.Open();
+                _cmd.ExecuteNonQuery();
             }
             finally
             {
-                con.Close();
+                _con.Close();
             }
         }
 
-
         private DataSet FillDataSet(MySqlCommand cmd, string tableName)
         {
-            MySqlConnection con = new MySqlConnection(connectionString);
-            cmd.Connection = con;
+            _con = new MySqlConnection(connectionString);
+            _cmd.Connection = _con;
             using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
             {
                 DataSet ds = new DataSet();
                 try
                 {
-                    con.Open();
+                    _con.Open();
                     adapter.Fill(ds, tableName);
                 }
                 finally
                 {
-                    con.Close();
+                    _con.Close();
                 }
                 return ds;
             }
