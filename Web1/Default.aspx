@@ -18,7 +18,4 @@
     </p>
     <p>
         &nbsp;</p>
-    <p>
-        <uc1:uc_test ID="uc_test1" runat="server" />
-    </p>
-</asp:Content>
+    </asp:Content>
