@@ -2,6 +2,9 @@
 <%@ Register assembly="DevExpress.Web.ASPxGridView.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxGridView" tagprefix="dx" %>
 <%@ Register assembly="DevExpress.Web.ASPxEditors.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxEditors" tagprefix="dx" %>
 
+<p>
+    Alunos</p>
+
 <dx:ASPxGridView ID="ASPxGridView1" runat="server" 
     DataSourceID="ObjectDataSource1" AutoGenerateColumns="False" 
     EnableCallbackCompression="False" KeyFieldName="id">
@@ -38,4 +41,40 @@
         <asp:Parameter Name="idade" Type="String" />
     </UpdateParameters>
 </asp:ObjectDataSource>
+
+<p>
+    Turmas</p>
+<dx:ASPxGridView ID="ASPxGridView2" runat="server" AutoGenerateColumns="False" 
+    DataSourceID="ObjectDataSource2" KeyFieldName="idturma">
+    <Columns>
+        <dx:GridViewCommandColumn VisibleIndex="0">
+            <EditButton Visible="True">
+            </EditButton>
+            <NewButton Visible="True">
+            </NewButton>
+            <DeleteButton Visible="True">
+            </DeleteButton>
+            <ClearFilterButton Visible="True">
+            </ClearFilterButton>
+        </dx:GridViewCommandColumn>
+        <dx:GridViewDataTextColumn Caption="Nome" FieldName="nome" VisibleIndex="1">
+        </dx:GridViewDataTextColumn>
+    </Columns>
+    <Settings ShowFilterRow="True" ShowGroupPanel="True" />
+</dx:ASPxGridView>
+<asp:ObjectDataSource ID="ObjectDataSource2" runat="server" 
+    DeleteMethod="DeleteTurma" InsertMethod="InsertTurma" SelectMethod="GetTurmas" 
+    TypeName="Web1.Classes.TurmaDB" UpdateMethod="UpdateTurma">
+    <DeleteParameters>
+        <asp:Parameter Name="idturma" Type="Int32" />
+    </DeleteParameters>
+    <InsertParameters>
+        <asp:Parameter Name="nome" Type="String" />
+    </InsertParameters>
+    <UpdateParameters>
+        <asp:Parameter Name="idturma" Type="Int32" />
+        <asp:Parameter Name="nome" Type="String" />
+    </UpdateParameters>
+</asp:ObjectDataSource>
+
 
