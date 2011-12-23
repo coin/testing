@@ -5,7 +5,7 @@
 <dx:ASPxComboBox ID="ASPxComboBox1" runat="server" 
     DataSourceID="ObjectDataSource1">
     <Columns>
-        <dx:ListBoxColumn FieldName="nome" />
+        <dx:ListBoxColumn Caption="Turma" FieldName="nome" />
     </Columns>
 </dx:ASPxComboBox>
 <dx:ASPxGridView ID="ASPxGridView1" runat="server">
