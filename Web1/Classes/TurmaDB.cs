@@ -109,7 +109,7 @@ namespace Web1.Classes
             }
             catch (MySqlException err)
             {
-                throw new ApplicationException("Data error.");
+                throw new ApplicationException("Data error: {0}", err);
             }
             finally
             {
