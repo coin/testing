@@ -7,37 +7,52 @@ using MySql.Data.MySqlClient;
 
 namespace Web1.Classes
 {
-   /* public class Aluno
+    public class Aluno
     {
-        private int id;
-        private string nome;
-        private int idade;
+        private int _id;
+        private string _nome;
+        private int _idade;
+
+        public Aluno()
+        {
+        }
 
         public int id
         {
-            get { return id; }
-            set { id = value; }
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                _id = value;
+            }
         }
+
         public string nome
         {
-            get { return nome; }
-            set { nome = value; }
-        }
-        public string idade
-        {
-            get { return idade; }
-            set { idade = value; }
-        }
-
-        public Aluno(int id, string nome, int idade)
-        {
-            this.id = id;
-            this.nome = nome;
-            this.idade = idade;
+            get
+            {
+                return _nome;
+            }
+            set
+            {
+                _nome = value;
+            }
         }
 
-        public Aluno() { }
-    }*/
+        public int idade
+        {
+            get
+            {
+                return _idade;
+            }
+            set
+            {
+                _idade = value;
+            }
+        }
+    }
 
     public class AlunoDB
     {
@@ -50,15 +65,25 @@ namespace Web1.Classes
 
         public AlunoDB()
         {
-            if (WebConfigurationManager.ConnectionStrings["Dev"] == null)
+            Initialize();
+        }
+
+        public void Initialize()
+        {
+            // Initialize data source. Use "Dev" connection string from configuration.
+
+            if (WebConfigurationManager.ConnectionStrings["Dev"] == null ||
+            WebConfigurationManager.ConnectionStrings["Dev"].ConnectionString.Trim() == "")
             {
-                throw new ApplicationException("Missing ConnectionString variable in web.config.");
+                throw new ApplicationException("A connection string named 'Dev' with a valid connection string " +
+                "must exist in the <connectionStrings> configuration section for the application.");
             }
             else
             {
                 connectionString = WebConfigurationManager.ConnectionStrings["Dev"].ConnectionString;
             }
         }
+
 
         public DataSet GetAlunos()
         {
@@ -93,31 +118,40 @@ namespace Web1.Classes
                 _con.Close();
             }
         }
-
-        public void DeleteAluno(int id)
+        //
+        // Delete the Employee by ID.
+        //   This method assumes that ConflictDetection is set to OverwriteValues.
+        public int DeleteAluno(int id)
         {
-            _con = new MySqlConnection(connectionString);
 
             // Create DELETE Command.
-            string deleteSQL = "DELETE FROM aluno ";
-            deleteSQL += "WHERE (id = @id)";
-            _cmd = new MySqlCommand(deleteSQL, _con);
+            const string sqlCmd = "DELETE FROM aluno WHERE (id = @id)";
+
+            _con = new MySqlConnection(connectionString);
+            _cmd = new MySqlCommand(sqlCmd, _con);
 
             _cmd.Parameters.AddWithValue("@id", id);
+            //cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+
+            int result = 0;
 
             try
             {
                 _con.Open();
-                _cmd.ExecuteNonQuery();
+
+                result = _cmd.ExecuteNonQuery();
             }
-            catch (MySqlException err)
+            catch (MySqlException e)
             {
+                // Handle exception.
                 throw new ApplicationException("Data error.");
             }
             finally
             {
                 _con.Close();
             }
+
+            return result;
         }
 
         public void UpdateAluno(int id, string nome, string idade)
@@ -147,7 +181,6 @@ namespace Web1.Classes
             {
                 _con.Close();
             }
-
         }
 
         private DataSet FillDataSet(MySqlCommand cmd, string tableName)
