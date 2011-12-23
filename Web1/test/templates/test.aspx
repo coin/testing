@@ -38,7 +38,20 @@
         </Fields>
     </asp:DetailsView>
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
-        TypeName="Web1.Classes.AlunoDB" InsertMethod="AddAluno">
+        TypeName="Web1.Classes.AlunoDB" InsertMethod="InsertAluno" 
+        DeleteMethod="DeleteAluno" SelectMethod="GetAlunos" UpdateMethod="UpdateAluno">
+        <DeleteParameters>
+            <asp:Parameter Name="id" Type="Int32" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="nome" Type="String" />
+            <asp:Parameter Name="idade" Type="String" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="id" Type="Int32" />
+            <asp:Parameter Name="nome" Type="String" />
+            <asp:Parameter Name="idade" Type="String" />
+        </UpdateParameters>
     </asp:ObjectDataSource>
     </form>
     </body>
