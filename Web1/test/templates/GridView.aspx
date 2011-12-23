@@ -9,6 +9,8 @@
 
 <%@ Register src="~/test/UC/UC_GridView_DataSource.ascx" tagname="UC_GridView_DataSource" tagprefix="uc1" %>
 
+<%@ Register src="~/test/UC/UC_GridView_DataSource_DBUtil.ascx" tagname="UC_GridView_DataSource_DBUtil" tagprefix="uc3" %>
+
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -21,6 +23,9 @@
     <div>
 
         <uc1:UC_GridView_DataSource ID="UC_GridView_DataSource1" runat="server" />
+
+        <uc3:UC_GridView_DataSource_DBUtil ID="UC_GridView_DataSource_DBUtil1" 
+            runat="server" />
 
     </div>
     </form>

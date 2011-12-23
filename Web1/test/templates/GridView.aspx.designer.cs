@@ -28,6 +28,15 @@ namespace Web1.test {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UserControl UC_GridView_DataSource1;
+        protected global::Web1.test.UC.WebUserControl1 UC_GridView_DataSource1;
+        
+        /// <summary>
+        /// UC_GridView_DataSource_DBUtil1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Web1.test.UC.WebUserControl2 UC_GridView_DataSource_DBUtil1;
     }
 }
