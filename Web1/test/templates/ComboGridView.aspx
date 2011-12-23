@@ -12,7 +12,7 @@
     <form id="form1" runat="server">
     <div>
     
-        Select &quot;Turma&quot; from the ComboBox and it will show the &quot;Alunos&quot; Table<br />
+        Select &quot;Turma&quot; from the LookupGrid and it will show the &quot;Alunos&quot; Table<br />
         <uc1:UC_EmptyGrid_DB ID="UC_EmptyGrid_DB1" runat="server" />
     
     </div>

@@ -13,22 +13,31 @@ namespace Web1.test.UC {
     public partial class WebUserControl3 {
         
         /// <summary>
-        /// ASPxComboBox1 control.
+        /// ASPxGridLookup1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxComboBox ASPxComboBox1;
+        protected global::DevExpress.Web.ASPxGridLookup.ASPxGridLookup ASPxGridLookup1;
         
         /// <summary>
-        /// ASPxGridView1 control.
+        /// _GridAlunos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView.ASPxGridView ASPxGridView1;
+        protected global::DevExpress.Web.ASPxGridView.ASPxGridView _GridAlunos;
+        
+        /// <summary>
+        /// _label control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label _label;
         
         /// <summary>
         /// ObjectDataSource1 control.

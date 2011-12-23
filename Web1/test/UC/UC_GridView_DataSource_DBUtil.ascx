@@ -21,6 +21,9 @@
         </dx:GridViewDataTextColumn>
         <dx:GridViewDataTextColumn Caption="Idade" FieldName="idade" VisibleIndex="2">
         </dx:GridViewDataTextColumn>
+        <dx:GridViewDataTextColumn Caption="Turma" FieldName="fk_turma" 
+            VisibleIndex="3">
+        </dx:GridViewDataTextColumn>
     </Columns>
     <Settings ShowFilterRow="True" ShowGroupPanel="True" />
 </dx:ASPxGridView>
@@ -59,6 +62,8 @@
         </dx:GridViewCommandColumn>
         <dx:GridViewDataTextColumn Caption="Nome" FieldName="nome" VisibleIndex="1">
         </dx:GridViewDataTextColumn>
+        <dx:GridViewDataTextColumn Caption="Nota" FieldName="nota" VisibleIndex="2">
+        </dx:GridViewDataTextColumn>
     </Columns>
     <Settings ShowFilterRow="True" ShowGroupPanel="True" />
 </dx:ASPxGridView>
@@ -70,10 +75,12 @@
     </DeleteParameters>
     <InsertParameters>
         <asp:Parameter Name="nome" Type="String" />
+        <asp:Parameter Name="nota" Type="String" />
     </InsertParameters>
     <UpdateParameters>
         <asp:Parameter Name="idturma" Type="Int32" />
         <asp:Parameter Name="nome" Type="String" />
+        <asp:Parameter Name="nota" Type="String" />
     </UpdateParameters>
 </asp:ObjectDataSource>
 

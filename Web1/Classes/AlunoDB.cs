@@ -91,18 +91,27 @@ namespace Web1.Classes
             return FillDataSet(_cmd, "aluno");
         }
 
-        public void InsertAluno(string nome, string idade)
+        public DataSet GetAlunosFromTurma(int idturma)
+        {
+            _cmd = new MySqlCommand("SELECT * FROM aluno WHERE fk_turma = @idturma");
+            _cmd.Parameters.AddWithValue("@idturma", idturma);
+
+            return FillDataSet(_cmd, "aluno");
+        }
+
+        public void InsertAluno(string nome, string idade, string idturma)
         {
             _con = new MySqlConnection(connectionString);
 
             // Create INSERT Command.
             string insertSQL = "INSERT INTO aluno ";
-            insertSQL += "(nome, idade)";
-            insertSQL += "VALUES (@nome,  @idade)";
+            insertSQL += "(nome, idade, idturma)";
+            insertSQL += "VALUES (@nome,  @idade, @idturma)";
             _cmd = new MySqlCommand(insertSQL, _con);
 
             _cmd.Parameters.AddWithValue("@nome", nome);
             _cmd.Parameters.AddWithValue("@idade", idade);
+            _cmd.Parameters.AddWithValue("@idturma", idturma);
 
             try
             {
@@ -176,7 +185,7 @@ namespace Web1.Classes
             }
             catch (MySqlException err)
             {
-                throw new ApplicationException("Data error.");
+                throw new ApplicationException("Data error: {0}", err);
             }
             finally
             {

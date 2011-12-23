@@ -62,17 +62,18 @@ namespace Web1.Classes
             return FillDataSet(_cmd, "turma");
         }
 
-        public void InsertTurma(string nome)
+        public void InsertTurma(string nome, string nota)
         {
             _con = new MySqlConnection(connectionString);
 
             // Create INSERT Command.
             string insertSQL = "INSERT INTO turma ";
-            insertSQL += "(nome) ";
-            insertSQL += "VALUES (@nome)";
+            insertSQL += "(nome, nota) ";
+            insertSQL += "VALUES (@nome, @nota)";
             _cmd = new MySqlCommand(insertSQL, _con);
 
             _cmd.Parameters.AddWithValue("@nome", nome);
+            _cmd.Parameters.AddWithValue("@nota", nota);
 
             try
             {
@@ -89,18 +90,19 @@ namespace Web1.Classes
             }
         }
 
-        public void UpdateTurma(int idturma, string nome)
+        public void UpdateTurma(int idturma, string nome, string nota)
         {
             _con = new MySqlConnection(connectionString);
 
             // Create UPDATE Command.
             string updateSQL = "UPDATE turma ";
-            updateSQL += "SET nome = @nome ";
+            updateSQL += "SET nome = @nome, nota = @nota ";
             updateSQL += "WHERE (idturma = @idturma)";
             _cmd = new MySqlCommand(updateSQL, _con);
 
             _cmd.Parameters.AddWithValue("@idturma", idturma);
             _cmd.Parameters.AddWithValue("@nome", nome);
+            _cmd.Parameters.AddWithValue("@nota", nota);
 
             try
             {
