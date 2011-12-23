@@ -111,7 +111,7 @@ namespace Web1.Classes
             }
             catch (MySqlException err)
             {
-                throw new ApplicationException("Data error.");
+                throw new ApplicationException("Data error: {0}", err);
             }
             finally
             {
@@ -141,10 +141,10 @@ namespace Web1.Classes
 
                 result = _cmd.ExecuteNonQuery();
             }
-            catch (MySqlException e)
+            catch (MySqlException err)
             {
                 // Handle exception.
-                throw new ApplicationException("Data error.");
+                throw new ApplicationException("Data error: {0}", err);
             }
             finally
             {
