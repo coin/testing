@@ -34,6 +34,7 @@
                         <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
                         <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
                         <asp:MenuItem NavigateUrl="~/test/templates/GridView.aspx" Text="GridView"/>
+                        <asp:MenuItem NavigateUrl="~/test/templates/ComboGridView.aspx" Text="ComboGridView"/>
                     </Items>
                 </asp:Menu>
             </div>

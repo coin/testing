@@ -77,8 +77,10 @@
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="test\templates\GridView.aspx" />
+    <Content Include="test\templates\ComboGridView.aspx" />
     <Content Include="test\UC\UC_GridView_DataSource.ascx" />
     <Content Include="test\UC\UC_GridView_DataSource_DBUtil.ascx" />
+    <Content Include="test\UC\UC_EmptyGrid_DB.ascx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -151,6 +153,13 @@
     <Compile Include="test\templates\GridView.aspx.designer.cs">
       <DependentUpon>GridView.aspx</DependentUpon>
     </Compile>
+    <Compile Include="test\templates\ComboGridView.aspx.cs">
+      <DependentUpon>ComboGridView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test\templates\ComboGridView.aspx.designer.cs">
+      <DependentUpon>ComboGridView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="test\UC\UC_GridView_DataSource.ascx.cs">
       <DependentUpon>UC_GridView_DataSource.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -171,6 +180,13 @@
     </Compile>
     <Compile Include="test\templates\test.aspx.designer.cs">
       <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="test\UC\UC_EmptyGrid_DB.ascx.cs">
+      <DependentUpon>UC_EmptyGrid_DB.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test\UC\UC_EmptyGrid_DB.ascx.designer.cs">
+      <DependentUpon>UC_EmptyGrid_DB.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
