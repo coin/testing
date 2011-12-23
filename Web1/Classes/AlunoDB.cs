@@ -88,7 +88,7 @@ namespace Web1.Classes
         public DataSet GetAlunos()
         {
             _cmd = new MySqlCommand("SELECT * FROM aluno");
-            return FillDataSet(_cmd, "Alunos");
+            return FillDataSet(_cmd, "aluno");
         }
 
         public void InsertAluno(string nome, string idade)
@@ -118,8 +118,9 @@ namespace Web1.Classes
                 _con.Close();
             }
         }
+
         //
-        // Delete the Employee by ID.
+        // Delete the Aluno by ID.
         //   This method assumes that ConflictDetection is set to OverwriteValues.
         public int DeleteAluno(int id)
         {
