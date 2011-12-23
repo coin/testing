@@ -42,6 +42,10 @@
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="DevExpress.Web.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v11.2.Web, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="MySql.Data, Version=6.4.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -74,6 +78,7 @@
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="test\templates\GridView.aspx" />
     <Content Include="test\UC\UC_GridView_DataSource.ascx" />
+    <Content Include="test\UC\UC_GridView_DataSource_DBUtil.ascx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -81,6 +86,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="test\templates\test.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.aspx.cs">
@@ -118,7 +124,7 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Classes\DBUtil.cs" />
+    <Compile Include="Classes\AlunoDB.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -150,6 +156,20 @@
     </Compile>
     <Compile Include="test\UC\UC_GridView_DataSource.ascx.designer.cs">
       <DependentUpon>UC_GridView_DataSource.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="test\UC\UC_GridView_DataSource_DBUtil.ascx.cs">
+      <DependentUpon>UC_GridView_DataSource_DBUtil.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test\UC\UC_GridView_DataSource_DBUtil.ascx.designer.cs">
+      <DependentUpon>UC_GridView_DataSource_DBUtil.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="test\templates\test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test\templates\test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
